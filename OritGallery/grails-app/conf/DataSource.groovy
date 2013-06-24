@@ -3,10 +3,11 @@ dataSource {
     driverClassName = "org.h2.Driver"
     username = "sa"
     password = ""
+	logSql = true
 }
 hibernate {
     cache.use_second_level_cache = true
-    cache.use_query_cache = false
+    cache.use_query_cache = true
     cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
 }
 // environment specific settings
@@ -24,6 +25,32 @@ environments {
         }
     }
 	
+	
+	production {
+		dataSource {
+			dbCreate = "update"
+			dialect= org.hibernate.dialect.MySQLInnoDBDialect
+			url = "jdbc:mysql://localhost/mysql-db?useUnicode=true&characterEncoding=utf8"
+			username = 'user'
+			password = "password"
+			pooled = true
+			properties {
+			   maxActive = -1
+			   minEvictableIdleTimeMillis=1800000
+			   timeBetweenEvictionRunsMillis=1800000
+			   numTestsPerEvictionRun=3
+			   testOnBorrow=true
+			   testWhileIdle=true
+			   testOnReturn=true
+			   validationQuery="SELECT 1"
+			}
+		}
+	}
+
+	
+	
+	
+	/*
 	production {
 		dataSource {
 			dialect= org.hibernate.dialect.MySQLInnoDBDialect
@@ -34,7 +61,7 @@ environments {
 			dbCreate = "update"
 		}
 	}
-	
+	*/
 	
 /*    production {
         dataSource {

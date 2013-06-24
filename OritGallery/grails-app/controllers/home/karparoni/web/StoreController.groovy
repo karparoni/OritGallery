@@ -23,13 +23,13 @@ class StoreController {
 		//log.info("Executing action $actionName params=$params")	
 		
 		def nameToSearchFor1 = params.albumCaption.replaceAll('_', ' ')
-		def albumInstance = Album.findByCaption(nameToSearchFor1)
+		def albumInstance = Album.findByCaption(nameToSearchFor1, [fetch:[photos:'join']])
 		
 			def photoInstanceList = albumInstance.photos
 			
 			def firstPhoto=photoInstanceList.first().getAt('id')
 			
-			log.info("GENRE-> firstPhoto=$firstPhoto,  albumInstance=$albumInstance, photoInstanceList = $photoInstanceList  ")
+			//log.info("GENRE-> firstPhoto=$firstPhoto,  albumInstance=$albumInstance, photoInstanceList = $photoInstanceList  ")
 			
 			[albums: Album.list(),photoInstanceList: photoInstanceList, firstPhoto: firstPhoto]
 

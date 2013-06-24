@@ -9,8 +9,8 @@ class BootStrap {
 		
 		
 		
-//		def album1 = new Album(caption: "cap-album1", description: "desc-album1" ).save(failOnError: true)
-//		def album2 = new Album(caption: "cap-album2", description: "desc-album2" ).save(failOnError: true)
+		def album1 = new Album(caption: "cap-album1", description: "desc-album1" ).save(failOnError: true)
+		def album2 = new Album(caption: "cap-album2", description: "desc-album2" ).save(failOnError: true)
 		
 		
 	//	def url = this.class.getResource("/${userId}.jpg")
@@ -20,13 +20,13 @@ class BootStrap {
 	//		user.profile.photo = image
 	//	}
 		
-//		new Photo(photo: new File("web-app/photos/1.jpg").readBytes(), caption:"photo1-a1",album: album1 ).save(failOnError: true)
-//		new Photo(photo: new File("web-app/photos/2.jpg").readBytes(), caption:"photo2-a1",album:album1 ).save(failOnError: true)
-//		new Photo(photo: new File("web-app/photos/3.gif").readBytes(), caption:"photo3-a1",album:album1 ).save(failOnError: true)
+		new Photo(photo: new File("web-app/photos/1.jpg").readBytes(), caption:"photo1-a1",album: album1 ).save(failOnError: true)
+		new Photo(photo: new File("web-app/photos/2.jpg").readBytes(), caption:"photo2-a1",album:album1 ).save(failOnError: true)
+		new Photo(photo: new File("web-app/photos/3.gif").readBytes(), caption:"photo3-a1",album:album1 ).save(failOnError: true)
 	
-//		new Photo(photo: new File("web-app/photos/7.jpg").readBytes(), caption:"photo1-a2",album:album2 ).save(failOnError: true)
-//		new Photo(photo: new File("web-app/photos/8.jpg").readBytes(), caption:"photo2-a2",album:album2 ).save(failOnError: true)
-//		new Photo(photo: new File("web-app/photos/9.jpg").readBytes(), caption:"photo3-a2",album:album2 ).save(failOnError: true)
+		new Photo(photo: new File("web-app/photos/7.jpg").readBytes(), caption:"photo1-a2",album:album2 ).save(failOnError: true)
+		new Photo(photo: new File("web-app/photos/8.jpg").readBytes(), caption:"photo2-a2",album:album2 ).save(failOnError: true)
+		new Photo(photo: new File("web-app/photos/9.jpg").readBytes(), caption:"photo3-a2",album:album2 ).save(failOnError: true)
 	
 			
 		

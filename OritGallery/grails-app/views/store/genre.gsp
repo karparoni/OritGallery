@@ -7,27 +7,20 @@
   <body>
 
     <div class="container">
-    
         <div class="row">
+		    <div class="sidebar span3">
+				<g:render template="sidebar"></g:render>
+			</div> 
 
-
-	    <div class="sidebar span3">
-			<g:render template="sidebar"></g:render>
-		</div> 
-
- <div class="span9">
-
-
-	     <g:if test="${photoInstanceList}">
-	     	<g:render template="list"></g:render>
-	     </g:if>
-	     <g:else>
-	     	<h2>Please choice album</h2>
-	     	<img src="photos/1.jpg" class="img-circle">
-	     </g:else>
-
-
-     </div> <!--  -->
+ 			<div class="span9">
+			     <g:if test="${photoInstanceList}">
+			     	<g:render template="list"></g:render>
+			     </g:if>
+			     <g:else>
+			     	<h2>Please choice album</h2>
+			     	<img src="photos/1.jpg" class="img-circle">
+			     </g:else>
+		     </div> <!--  "span9"-->
          </div> <!-- row -->
     </div> <!-- /container -->
 
