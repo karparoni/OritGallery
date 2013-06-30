@@ -6,6 +6,9 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
+
+
+
 // uncomment (and adjust settings) to fork the JVM to isolate classpaths
 //grails.project.fork = [
 //   run: [maxMemory:1024, minMemory:64, debug:false, maxPerm:256]
@@ -71,7 +74,8 @@ grails.project.dependency.resolution = {
 		compile ":less-resources:1.3.3.1"
 		
 		
-		compile ":cloud-foundry:1.2.3"
+		//compile ":cloud-foundry:1.2.3"
+		compile ":cloud-bees:0.6.2"
 		
 		
 		

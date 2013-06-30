@@ -3,7 +3,7 @@ dataSource {
     driverClassName = "org.h2.Driver"
     username = "sa"
     password = ""
-	logSql = true
+	//logSql = true
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -27,12 +27,24 @@ environments {
 	
 	
 	production {
+		// DEMO JNDI DATA SOURCE
+		dataSource {
+			dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
+			pooled = false
+
+			dbCreate = 'update' // WARNING! on production, should probably be 'update' or 'validate'
+			jndiName = 'java:comp/env/jdbc/mydb'
+		}
+	}
+	
+	/*
+	production {
 		dataSource {
 			dbCreate = "update"
 			dialect= org.hibernate.dialect.MySQLInnoDBDialect
-			url = "jdbc:mysql://localhost/mysql-db?useUnicode=true&characterEncoding=utf8"
-			username = 'user'
-			password = "password"
+			url = "jdbc:cloudbees://oritgallery?useUnicode=true&characterEncoding=utf8"
+			username = 'oritdor'
+			password = "0547597800"
 			pooled = true
 			properties {
 			   maxActive = -1
@@ -44,10 +56,30 @@ environments {
 			   testOnReturn=true
 			   validationQuery="SELECT 1"
 			}
-		}
+		}	
 	}
-
 	
+	*/
+
+	bees {
+		dataSource {
+		 dbCreate = "update"
+		 username = "oritdor"
+		 password = "0547597800"
+		 url = "jdbc:cloudbees://oritdor_db"
+		 pooled = true
+		 properties {
+			maxActive = -1
+			minEvictableIdleTimeMillis=1800000
+			timeBetweenEvictionRunsMillis=1800000
+			numTestsPerEvictionRun=3
+			testOnBorrow=true
+			testWhileIdle=true
+			testOnReturn=true
+			validationQuery="SELECT 1"
+		 }
+		}
+	   }
 	
 	
 	/*
